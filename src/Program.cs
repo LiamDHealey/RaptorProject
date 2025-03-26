@@ -1,11 +1,14 @@
 ﻿using Microsoft.Spark.Sql;
+using System.Linq;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
-        var spark = SparkSession.Builder().GetOrCreate();
-        var df = spark.Read().Json("people.json");
-        df.Show();
+        SparkSession spark = SparkSession.Builder().GetOrCreate();
+        var rows = Directory.GetFiles("data/Test")
+            .Select(ImageMagick.)
+        DataFrame df = spark.CreateDataFrame();
     }
 }
