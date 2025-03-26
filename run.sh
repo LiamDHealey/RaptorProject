@@ -1,5 +1,9 @@
 #!/bin/bash
-
-dotnet build > logs/build.log
+git pull
 wait
-spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local microsoft-spark-3-1_2.12-2.1.1.jar dotnet RaptorProject.dll
+sbt package
+wait
+/opt/spark/bin/spark-submit \
+  --class "SimpleApp" \
+  --master local[4] \
+  target/scala-2.12/simple-project_2.12-1.0.jar
