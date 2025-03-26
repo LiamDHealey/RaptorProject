@@ -15,5 +15,4 @@ RUN apt-get install sbt -y
 RUN git clone https://github.com/LiamDHealey/RaptorProject
 WORKDIR /opt/spark/work-dir/RaptorProject
 RUN chmod +x run.sh
-RUN touch spark.log
 CMD ["tail", "-f", "/dev/null"]
