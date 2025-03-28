@@ -13,7 +13,7 @@ RUN curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E4
 RUN chmod 644 /etc/apt/trusted.gpg.d/scalasbt-release.gpg
 RUN apt-get update
 RUN apt-get install sbt -y
-RUN git clone https://github.com/LiamDHealey/RaptorProject
+RUN mkdir -p /opt/spark/work-dir/RaptorProject
 WORKDIR /opt/spark/work-dir/RaptorProject
 RUN chmod +x run.sh
 CMD ["tail", "-f", "/dev/null"]
