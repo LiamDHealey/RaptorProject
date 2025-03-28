@@ -8,5 +8,4 @@ target
 project/metals.sbt
 /project
 /data/Raster
-/data/Vector
 output.log
