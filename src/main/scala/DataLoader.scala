@@ -7,7 +7,7 @@ import spark.implicits._
 
 object DataLoader {
     def getRasterData(): Dataset[Pixel] = {
-        val ds = spark.emptyDataset[Pixel]
+        var ds = spark.emptyDataset[Pixel]
 
         new File("data/Test").listFiles().foreach(file => {
             val image = ImageIO.read(file)
@@ -16,13 +16,13 @@ object DataLoader {
             val hieght = image.getHeight()
             val xOffset = Integer.parseInt(file.getName().substring(9,  11)) * width
             val yOffset = Integer.parseInt(file.getName().substring(12, 15)) * hieght
-
+            
             val data = (
-                (0 until width, 0 until hieght)
-                .zipped.map((x, y) => Pixel(x + xOffset, y + yOffset, image.getRGB(x, y)))
-            ).toDS()
+                for ( x <- 0 until width; y <- 0 until hieght ) 
+                yield new Pixel(x + xOffset, y + yOffset, image.getRGB(x, y))
+            )
 
-            ds.union(data)
+            ds = ds.union(data.toDS())
         })
         
         return ds

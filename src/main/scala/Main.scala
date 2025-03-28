@@ -1,5 +1,6 @@
 import org.apache.spark.sql._
 import org.apache.spark.sql.types._
+import org.apache.spark.launcher.SparkLauncher
 
 object Main {  
     val spark = SparkSession.builder.appName("Simple Application").getOrCreate()

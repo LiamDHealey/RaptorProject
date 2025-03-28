@@ -4,6 +4,7 @@ USER root
 RUN apt update
 RUN apt install git -y
 RUN apt install wget -y
+RUN apt-get install libxrender1 libxtst6 libxi6 -y
 RUN apt-get update
 RUN apt-get install apt-transport-https curl gnupg -yqq
 RUN echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
