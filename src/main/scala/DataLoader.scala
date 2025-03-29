@@ -7,7 +7,7 @@ import spark.implicits._
 
 object DataLoader {
     def getRasterData(): Dataset[Pixel] = {
-        //var ds = spark.emptyDataset[Pixel]
+        var ds = spark.emptyDataset[Pixel]
 
         new File("data/Test").listFiles().foreach(file => {
             val image = ImageIO.read(file).getRaster()
@@ -22,10 +22,10 @@ object DataLoader {
                 yield new Pixel(x + xOffset, y + yOffset, image.getPixel(x, y, null.asInstanceOf[Array[Int]])(0))
             )
 
-            //ds = ds.union(data.toDS())
+            ds = ds.union(data.toDS())
         })
         
-        return ???//ds
+        return ds
     }
 
     def getVectorData(): RDD[Int] = {

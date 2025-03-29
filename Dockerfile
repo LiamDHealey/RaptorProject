@@ -15,5 +15,4 @@ RUN apt-get update
 RUN apt-get install sbt -y
 RUN mkdir -p /opt/spark/work-dir/RaptorProject
 WORKDIR /opt/spark/work-dir/RaptorProject
-RUN chmod +x run.sh
 CMD ["tail", "-f", "/dev/null"]
