@@ -9,7 +9,7 @@ object DataLoader {
     def getRasterData(): Dataset[Pixel] = {
         var ds = spark.emptyDataset[Pixel]
 
-        new File("data/Test").listFiles().foreach(file => {
+        new File("data/Raster Test").listFiles().foreach(file => {
             val image = ImageIO.read(file).getRaster()
 
             val width = image.getWidth()
