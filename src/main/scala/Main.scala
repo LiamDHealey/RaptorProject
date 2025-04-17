@@ -9,13 +9,14 @@ object Main {
         println("Start Loading")
         // Image data is a dataset where x & y are mesured in 1/3 arc-seconds
         val imageData = DataLoader.getRasterData()
-        //val vectorData = DataLoader.getVectorData()
+        imageData.show(10);
+        val vectorData = VectorLoader.getVectorData()
         println("Done Loading")
         
 
         //PointInPolygon.compute(imageData, vectorData).foreach(println)
 
         // Stop Spark
-        //spark.stop()
+        spark.stop()
     }
 }
