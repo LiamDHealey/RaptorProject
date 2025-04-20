@@ -8,3 +8,4 @@ target
 project/metals.sbt
 /project
 output.log
+*.tif
