@@ -5,11 +5,12 @@ import org.apache.spark.sql._
 import Main.spark
 import spark.implicits._
 
-object DataLoader {
+object RasterLoader {
     def getRasterData(): Dataset[Pixel] = {
         var ds = spark.emptyDataset[Pixel]
 
-        new File("data/Raster Test").listFiles().foreach(file => {
+        new File("data/Test").listFiles().foreach(file => {
+            println(file)
             val image = ImageIO.read(file).getRaster()
 
             val width = image.getWidth()
@@ -26,9 +27,5 @@ object DataLoader {
         })
         
         return ds
-    }
-
-    def getVectorData(): RDD[Int] = {
-        return ???
     }
 }
