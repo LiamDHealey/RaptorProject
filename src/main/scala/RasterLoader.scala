@@ -9,7 +9,7 @@ object RasterLoader {
     def getRasterData(): DataFrame = {
         var df : DataFrame = null
 
-        new File("data/Test").listFiles().foreach(file => {
+        new File("data/Raster").listFiles().foreach(file => {
             val imageDf = spark.read.format("image").option("dropInvalid", true).load(file.getPath())
             if (df == null)
                 df = imageDf
