@@ -5,36 +5,37 @@ import org.apache.spark.sql._
 import Main.spark
 import spark.implicits._
 
+final case class Pixel(x: Int, y: Int, elevation: Byte)
+
 object RasterLoader {
-    def getRasterData(): DataFrame = {
-        var df : DataFrame = null
+    def getRasterData(): Dataset[Pixel] = {
+        var ds : Dataset[Pixel] = spark.emptyDataset[Pixel]
 
         new File("data/Raster").listFiles().foreach(file => {
-            val imageDf = spark.read.format("image").option("dropInvalid", true).load(file.getPath())
-            if (df == null)
-                df = imageDf
-            else
-                df = df.union(imageDf)
+            val xOffset = Integer.parseInt(file.getName().split("n", 2)(1).split("w", 2)(0))
+            val yOffset = Integer.parseInt(file.getName().split("w", 2)(1).split("_", 2)(0))
             
-            // println(file)
-            // val image = ImageIO.read(file).getRaster()
-            // println("   read")
-            // val width = image.getWidth()
-            // val hieght = image.getHeight()
-            // println(s"   W: $width H: $hieght")
-            // val xOffset = Integer.parseInt(file.getName().split("n", 2)(1).split("w", 2)(0)) * width
-            // val yOffset = Integer.parseInt(file.getName().split("w", 2)(1).split("_", 2)(0)) * hieght
-            // println(s"   x: $xOffset y: $yOffset")
+            val imageDf = spark.read.format("image").option("dropInvalid", true).load(file.getPath())
+
+            val imageDS = imageDf
+                .flatMap(r => {
+                    val image = r.getAs[Row]("image")
+                    val data = image.getAs[Array[Byte]]("data")
+                    val width = image.getAs[Int]("width")
+                    val height = image.getAs[Int]("height")
+                    data.zipWithIndex.map(bi => new Pixel(
+                        xOffset * width + bi._2 % width,
+                        yOffset * height + bi._2 / width,
+                        bi._1
+                    ))
+                })
 
 
-            // for ( x <- 0 until width; y <- 0 until hieght ) 
-            // {
-            //     ds = ds.union(Seq(new Pixel(x + xOffset, y + yOffset, image.getPixel(x, y, null.asInstanceOf[Array[Int]])(0))).toDS())
-            // }
-
+            ds = ds.union(imageDS)            
+            
             println(s"   Loaded $file")
         })
 
-        return df
+        return ds
     }
 }
