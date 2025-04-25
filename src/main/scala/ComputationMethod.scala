@@ -1,6 +1,5 @@
-import org.apache.spark.sql._
-import org.apache.spark.rdd.RDD
+import org.apache.spark.sql.Dataset
 
 trait ComputationMethod {
-  def compute(rasterData : Dataset[Pixel], vectorData : RDD[Int]): RDD[Int]
+  def compute(rasterData: Dataset[Pixel], vectorData: Dataset[Region]): Dataset[_]
 }
