@@ -8,7 +8,7 @@ object Main {
     def main(args: Array[String]): Unit = {
 
         println("Start Loading")
-        // Image data is a dataset where x & y are mesured in 1/3 arc-seconds
+        // Image data is a dataset where x & y are mesured in arc-seconds
         val imageData = RasterLoader.getRasterData()
         val vectorData = VectorLoader.getVectorData()
         println("Done Loading")
