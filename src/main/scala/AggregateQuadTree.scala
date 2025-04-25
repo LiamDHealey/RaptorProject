@@ -1,4 +1,5 @@
 import org.apache.spark.sql.{Dataset, functions => F}
+import Main.spark
 
 object AggregateQuadTree extends ComputationMethod {
   override def compute(
@@ -41,6 +42,7 @@ object AggregateQuadTree extends ComputationMethod {
       .orderBy("state", "county")
 
     // result.show(100, truncate = false)
-    result
+    //result
+    spark.emptyDataset[Result]
   }
 }
