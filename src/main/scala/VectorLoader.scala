@@ -8,8 +8,8 @@ import spark.implicits._
 case class Region(
     state: String,
     county: String,
-    population: Int,
-    coordinates: Seq[Seq[Seq[Double]]]
+    // population: Int,
+    coordinates: Seq[Seq[Seq[Option[Double]]]]
 )
 
 object VectorLoader {
@@ -24,7 +24,7 @@ object VectorLoader {
     var ds = spark.emptyDataset[Region]
 
     files.foreach { file =>
-      println(s"Processing ${file.getName}")
+      // println(s"Processing ${file.getName}")
       try {
         val df = spark.read
           .option("multiline", "true")
@@ -36,7 +36,7 @@ object VectorLoader {
             .select(
               col("feature.properties.state_name").as("state"),
               col("feature.properties.county_nam").as("county"),
-              col("feature.properties.population").cast("int").as("population"),
+              // col("feature.properties.population").cast("int").as("population"),
               // three nested transforms to cast every element to double easy peasy baby
               expr("""
                 transform(
@@ -63,7 +63,7 @@ object VectorLoader {
           println(s"Failed on ${file.getName}: ${e.getMessage}")
       }
     }
-    ds.show(100)
+    ds.show(10)
     println(s"Total regions loaded: ${ds.count()}")
     ds
   }

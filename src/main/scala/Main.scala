@@ -12,9 +12,13 @@ object Main {
         val imageData = RasterLoader.getRasterData()
         imageData.show(10)
         println(s"count: ${imageData.count()}")
-        //val vectorData = VectorLoader.getVectorData()
+        // val vectorData = VectorLoader.getVectorData()
+        // vectorData.show(10)
         println("Done Loading")
-        
+        println("Aggregating QuadTree")
+        // val AggregateQuadTreeResult = AggregateQuadTree.compute(imageData, vectorData)
+        // AggregateQuadTreeResult.show(10)
+        println("QuadTree Done")
 
         //PointInPolygon.compute(imageData, vectorData).foreach(println)
 
