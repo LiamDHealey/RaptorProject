@@ -9,8 +9,10 @@ case class Region(
     state: String,
     county: String,
     // population: Int,
-    coordinates: Seq[Seq[Seq[Option[Double]]]]
+    points: Seq[Point]
 )
+
+case class Point(x: Double, y: Double)
 
 object VectorLoader {
   def getVectorData(): Dataset[Region] = {
@@ -31,7 +33,7 @@ object VectorLoader {
           .json(file.getPath)
 
         if (df.columns.contains("features")) {
-          val regionDS = df
+          val rawDF = df
             .select(explode(col("features")).as("feature"))
             .select(
               col("feature.properties.state_name").as("state"),
@@ -51,7 +53,28 @@ object VectorLoader {
                 )
               """).as("coordinates")
             )
-            .as[Region]
+            // .as[Region]
+            
+            // this will basically expand the 3d array of coordinates into a sequence of points
+            val regionDS = rawDF.map { row =>
+            val state = row.getAs[String]("state")
+            val county = row.getAs[String]("county")
+            val rawCoords = row.getAs[Seq[Seq[Seq[Any]]]]("coordinates")
+
+            val points: Seq[Point] = rawCoords match {
+              case null => Seq.empty
+              case coords =>
+                coords.flatMap { ring =>
+                  ring.flatMap {
+                    case Seq(x: java.lang.Number, y: java.lang.Number) =>
+                      Some(Point(x.doubleValue(), y.doubleValue()))
+                    case _ => None
+                  }
+                }
+            }
+
+            Region(state, county, points)
+          }
 
           //   regionDS.show(2, truncate = false)
           ds = ds.union(regionDS)
