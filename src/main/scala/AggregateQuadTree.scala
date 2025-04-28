@@ -1,48 +1,86 @@
 import org.apache.spark.sql.{Dataset, functions => F}
+import org.apache.spark.sql.functions._
 import Main.spark
+import spark.implicits._
+
+// ----- QuadTree Cell -----
+case class QuadCell(xmin: Double, xmax: Double, ymin: Double, ymax: Double, elevationSum: Double, count: Long)
 
 object AggregateQuadTree extends ComputationMethod {
+
+  val RESOLUTION_LEVELS = 6  
+
   override def compute(
       rasterData: Dataset[Pixel],
       vectorData: Dataset[Region]
-  ) = {
+  ): Dataset[Result] = {
+    
     import rasterData.sparkSession.implicits._
 
-    // //bounding box for each region
-    // val vectorWithBounds = vectorData
-    //   .map { region =>
-    //     val allCoords = region.coordinates.flatten.flatten
-    //     // val xs = allCoords.grouped(2).map(_(0)).toSeq
-    //     // val ys = allCoords.grouped(2).map(_(1)).toSeq
-    //     val coordPairs = allCoords.grouped(2).filter(_.length == 2).toSeq
-    //     val xs = coordPairs.map(_(0))
-    //     val ys = coordPairs.map(_(1))
-    //     val xmin = xs.min
-    //     val xmax = xs.max
-    //     val ymin = ys.min
-    //     val ymax = ys.max
-    //     (region.state, region.county, xmin, xmax, ymin, ymax)
-    //   }
-    //   .toDF("state", "county", "xmin", "xmax", "ymin", "ymax")
+    println("Building QuadTree...")
 
-    // //raster pixels whose (x, y) fall within region bounding box
-    // val joined = rasterData
-    //   .crossJoin(vectorWithBounds)
-    //   .filter(
-    //     $"x" >= $"xmin" && $"x" <= $"xmax" && $"y" >= $"ymin" && $"y" <= $"ymax"
-    //   )
+    // Raster Pixels to Degree scale 
+    val scaledRaster = rasterData.map { p =>
+      val lon = p.y * 0.000277777778
+      val lat = p.x * 0.000277777778
+      (lon, lat, p.elevation.toDouble)
+    }.toDF("lon", "lat", "elevation")
 
-    // //Group by region and compute average elevation
-    // val result = joined
-    //   .groupBy("state", "county")
-    //   .agg(
-    //     F.avg("elevation").alias("avg_elevation"),
-    //     F.count("elevation").alias("pixel_count")
-    //   )
-    //   .orderBy("state", "county")
+    // Create quad cells
+    val quadCells = scaledRaster.map { row =>
+      val lon = row.getAs[Double]("lon")
+      val lat = row.getAs[Double]("lat")
+      val elevation = row.getAs[Double]("elevation")
 
-    // result.show(100, truncate = false)
-    //result
-    spark.emptyDataset[Result]
+      // Find which quad cell this pixel falls into
+      val cellSize = 1.0 / math.pow(2, RESOLUTION_LEVELS)  // Degree size of one cell
+      val xmin = (lon / cellSize).floor * cellSize
+      val ymin = (lat / cellSize).floor * cellSize
+      val xmax = xmin + cellSize
+      val ymax = ymin + cellSize
+
+      QuadCell(xmin, xmax, ymin, ymax, elevation, 1)
+    }
+
+    val aggregatedQuads = quadCells
+      .groupBy("xmin", "xmax", "ymin", "ymax")
+      .agg(
+        sum("elevationSum").as("totalElevation"),
+        sum("count").as("pixelCount")
+      )
+      .as[(Double, Double, Double, Double, Double, Long)]
+
+    println("QuadTree Built.")
+
+    val vectorWithBounds = vectorData.map { region =>
+      val xs = region.points.map(_.x)
+      val ys = region.points.map(_.y)
+      val xmin = xs.min
+      val xmax = xs.max
+      val ymin = ys.min
+      val ymax = ys.max
+      (region.state, region.county, xmin, xmax, ymin, ymax)
+    }.toDF("state", "county", "xmin", "xmax", "ymin", "ymax")
+
+    val quadsWithAlias = aggregatedQuads.as("quad")
+    val vectorsWithAlias = vectorWithBounds.as("vec")
+
+    val joined = quadsWithAlias.crossJoin(vectorsWithAlias)
+    .filter(
+        $"quad.xmin" >= $"vec.xmin" && $"quad.xmax" <= $"vec.xmax" &&
+        $"quad.ymin" >= $"vec.ymin" && $"quad.ymax" <= $"vec.ymax"
+    )
+
+    val aggregated = joined.groupBy($"vec.state", $"vec.county")
+    .agg(
+        ((sum($"quad.totalElevation") / sum($"quad.pixelCount"))).as("averageElevation")
+    )
+    .as[Result]
+
+    // val bumpedResult = aggregated.map(r => 
+    // Result(r.state, r.county, r.averageElevation + 128)
+    // )
+
+    aggregated
   }
 }
