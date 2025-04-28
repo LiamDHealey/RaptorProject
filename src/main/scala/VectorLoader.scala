@@ -21,7 +21,7 @@ object VectorLoader {
     val inputDir = new File("data/geojson_output")
     val files = Option(inputDir.listFiles())
       .getOrElse(Array.empty)
-      .filter(_.getName.toLowerCase.endsWith(".geojson"))
+      .filter(_.getName.toLowerCase.endsWith("utah.geojson")) // not using the other files for now
 
     var ds = spark.emptyDataset[Region]
 
@@ -86,7 +86,7 @@ object VectorLoader {
           println(s"Failed on ${file.getName}: ${e.getMessage}")
       }
     }
-    ds.show(10)
+    ds.show(40)
     println(s"Total regions loaded: ${ds.count()}")
     ds
   }
