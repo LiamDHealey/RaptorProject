@@ -27,7 +27,17 @@ object Main {
         var startTime = 0L
         var duration = 0.0
         
+
+        println("Aggregating QuadTree")
+        startTime = System.nanoTime
+        val AggregateQuadTreeResult = AggregateQuadTree.compute(imageData, vectorData)
+        AggregateQuadTreeResult.show(29)
+        duration = (System.nanoTime - startTime) / 1e9d
+        println(s"QuadTree Done | Took $duration")
         
+
+
+
         println("Clipping")
         //Need specific lat and lon values for clipping
         //LLRasterLoader incluides those values when parsing
@@ -43,12 +53,6 @@ object Main {
         println(s"Clipping Done | Took $duration")
 
 
-        println("Aggregating QuadTree")
-        startTime = System.nanoTime
-        val AggregateQuadTreeResult = AggregateQuadTree.compute(imageData, vectorData)
-        AggregateQuadTreeResult.show(29)
-        duration = (System.nanoTime - startTime) / 1e9d
-        println(s"QuadTree Done | Took $duration")
 
 
         println("Point in Polygon")
