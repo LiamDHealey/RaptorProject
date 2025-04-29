@@ -28,7 +28,7 @@ object Clipping {
   {
     println("Start of Clipping Compute")
 
-    val utahOnly = vectorData.filter(r => r.state == "Utah" && r.county == "Grand").collect()
+    val utahOnly = vectorData.filter(r => r.state == "Utah").collect()
 
     val results = utahOnly.flatMap { region =>
       println(s"Starting Clipping for ${region.county}, ${region.state}")

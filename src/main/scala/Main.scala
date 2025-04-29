@@ -6,7 +6,7 @@ object Main {
     val spark : SparkSession = SparkSession.builder.appName("Simple Application").getOrCreate()
     
     def main(args: Array[String]): Unit = {
-
+        spark.sparkContext.setLogLevel("ERROR")
         println("Start Loading")
         // Image data is a dataset where x & y are mesured in arc-seconds
         val imageData = RasterLoader.getRasterData()
@@ -22,7 +22,7 @@ object Main {
         var duration = 0.0
         println("Point in Polygon")
         startTime = System.nanoTime
-        val pointInPolySampleFraction = 0.00001
+        val pointInPolySampleFraction = 0.0000001
         val pointInPolygonReult = PointInPolygon.compute(imageData.sample(pointInPolySampleFraction), vectorData)
         pointInPolygonReult.show(50)
         duration = (System.nanoTime - startTime) / 1e9d / pointInPolySampleFraction
