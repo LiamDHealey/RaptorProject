@@ -7,15 +7,15 @@ object PointInPolygon extends ComputationMethod {
   override def compute(rasterData: Dataset[Pixel], vectorData: Dataset[Region]): Dataset[Result] = {
     val utahOnly = vectorData.filter(r => r.state == "Utah")
     return spark.createDataset(utahOnly.collect().map(region => {
-        println(s"   Starting PointInPoly: ${region.county}, ${region.state}")
+        println(s"   Starting PointInPoly: ${region.county}, ${region.state} | Num: ${region.points.length}")
         val averageElevation = rasterData.filter(pixel => {
+            val current = new Point(pixel.y * 0.000277777778, pixel.x * 0.000277777778) // Convert arcseconds to degrees
             var numIntersections = 0;
 
             for (i <- 0 until region.points.length)
             {
                 val start = region.points(i)
                 val end = region.points((i + 1) % region.points.length)
-                val current = new Point(pixel.x * 0.000277777778, pixel.y * 0.000277777778) // Convert arcseconds to degrees
 
                 val betweenPointsY = current.y > Math.min(start.y, end.y) && current.y <= Math.max(start.y, end.y)
                 val pastPointX = current.x <= Math.min(start.x, end.x)

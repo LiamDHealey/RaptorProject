@@ -20,10 +20,10 @@ object Main {
         println("Done Loading")
         
         
-        // println("Point in Polygon")
-        // val PointInPolygonReult = PointInPolygon.compute(imageData, vectorData)
-        // PointInPolygonReult.show(10)
-        // println("Point in Polygon Done")
+        println("Point in Polygon")
+        val PointInPolygonReult = PointInPolygon.compute(imageData.sample(0.0000001), vectorData)
+        PointInPolygonReult.show(10)
+        println("Point in Polygon Done")
         
         
         // println("Clipping")
@@ -37,10 +37,10 @@ object Main {
         // println("Clipping Done")
 
 
-        println("Aggregating QuadTree")
-        val AggregateQuadTreeResult = AggregateQuadTree.compute(imageData, vectorData)
-        AggregateQuadTreeResult.show(29)
-        println("QuadTree Done")
+        // println("Aggregating QuadTree")
+        // val AggregateQuadTreeResult = AggregateQuadTree.compute(imageData, vectorData)
+        // AggregateQuadTreeResult.show(29)
+        // println("QuadTree Done")
 
 
 
