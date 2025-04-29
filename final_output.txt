@@ -275,37 +275,37 @@ Clipping Done | Took 2.309284988926E8
 Aggregating QuadTree
 Building QuadTree...
 QuadTree Built.
-+-----+---------+-------------------+
-|state|   county|   averageElevation|
-+-----+---------+-------------------+
-| Utah|     Rich|  3.731937415246701|
-| Utah|    Emery| 0.8842124742931264|
-| Utah|  Sanpete| 1.0571215215208891|
-| Utah|  Daggett|-2.5084075642111205|
-| Utah|   Tooele| 3.6070071239117816|
-| Utah|   Beaver| -0.625177023049645|
-| Utah| San Juan| -2.463263459080359|
-| Utah|   Carbon|-3.1321850225590935|
-| Utah|   Sevier|0.07590167000987041|
-| Utah|    Weber| 20.820667966459016|
-| Utah| Garfield| -4.526983561101209|
-| Utah|   Uintah|-1.0094833777960188|
-| Utah|    Grand|-1.3404534001905792|
-| Utah|   Morgan|  9.744720643929528|
-| Utah|Salt Lake| -4.172060281716245|
-| Utah|     Juab| -3.779408700027415|
-| Utah|    Cache|  2.060115804044701|
-| Utah|Box Elder|   8.35444877409936|
-| Utah|    Wayne| 1.5299965610202744|
-| Utah|   Summit|  1.743844530777864|
-| Utah| Duchesne| -3.158080620032648|
-| Utah|    Piute|-1.7465728294382608|
-| Utah|    Davis| 0.2128253407440836|
-| Utah|     Iron|-4.1871425563712545|
-| Utah|     Utah|-0.1665993847898071|
-| Utah|  Millard|-3.3448094406921864|
-| Utah|  Wasatch| -2.644387124548908|
-+-----+---------+-------------------+
++-----+---------+------------------+
+|state|   county|  averageElevation|
++-----+---------+------------------+
+| Utah|     Rich|1976.9551529703033|
+| Utah|    Emery|1979.9062601514822|
+| Utah|  Daggett|2061.0476104995764|
+| Utah|  Sanpete|1951.3922036952533|
+| Utah|   Tooele|2044.5814537353817|
+| Utah|   Beaver|2027.4018278529368|
+| Utah| San Juan|2047.0392060887525|
+| Utah|   Carbon|2017.6294073649972|
+| Utah|   Sevier|2021.6552344023628|
+| Utah|    Weber|1674.5746306106323|
+| Utah| Garfield|2040.2919607843141|
+| Utah|   Uintah| 2014.998838081719|
+| Utah|    Grand|2021.4993068327112|
+| Utah|   Morgan|1947.2693033821408|
+| Utah|Salt Lake|2041.6278508710973|
+| Utah|     Juab|1979.2647330176385|
+| Utah|    Cache| 1997.446162429523|
+| Utah|Box Elder|1464.2200781234374|
+| Utah|   Summit|1971.5677268617815|
+| Utah|    Wayne|  1987.05863646696|
+| Utah| Duchesne|2038.6266494401848|
+| Utah|    Piute|2025.8248361476753|
+| Utah|    Davis|  1977.43584164198|
+| Utah|     Iron|2085.4621186548907|
+| Utah|     Utah| 1963.091966176376|
+| Utah|  Millard|2042.0130663227715|
+| Utah|  Wasatch|2007.9584730845336|
++-----+---------+------------------+
 
 QuadTree Done | Took 123.84013789
 Point in Polygon
