@@ -1,0 +1,406 @@
+
+
+
+
+
+ ======================================  Starting Computation  ======================================
+Start Loading
+   Loaded data/Raster/USGS_1_n38w109_20220720.tif
+   Loaded data/Raster/USGS_1_n38w110_20241031.tif
+   Loaded data/Raster/USGS_1_n38w111_20241031.tif
+   Loaded data/Raster/USGS_1_n38w112_20240614.tif
+   Loaded data/Raster/USGS_1_n38w113_20240614.tif
+   Loaded data/Raster/USGS_1_n38w114_20240614.tif
+   Loaded data/Raster/USGS_1_n38w115_20250115.tif
+   Loaded data/Raster/USGS_1_n39w109_20211208.tif
+   Loaded data/Raster/USGS_1_n39w110_20241031.tif
+   Loaded data/Raster/USGS_1_n39w111_20241031.tif
+   Loaded data/Raster/USGS_1_n39w112_20240130.tif
+   Loaded data/Raster/USGS_1_n39w113_20220510.tif
+   Loaded data/Raster/USGS_1_n39w114_20241031.tif
+   Loaded data/Raster/USGS_1_n39w115_20250115.tif
+   Loaded data/Raster/USGS_1_n40w109_20180328.tif
+   Loaded data/Raster/USGS_1_n40w110_20241031.tif
+   Loaded data/Raster/USGS_1_n40w111_20241031.tif
+   Loaded data/Raster/USGS_1_n40w112_20240130.tif
+   Loaded data/Raster/USGS_1_n40w113_20241031.tif
+   Loaded data/Raster/USGS_1_n40w114_20241031.tif
+   Loaded data/Raster/USGS_1_n40w115_20250115.tif
+   Loaded data/Raster/USGS_1_n41w109_20220805.tif
+   Loaded data/Raster/USGS_1_n41w110_20241031.tif
+   Loaded data/Raster/USGS_1_n41w111_20241031.tif
+   Loaded data/Raster/USGS_1_n41w112_20241031.tif
+   Loaded data/Raster/USGS_1_n41w113_20241031.tif
+   Loaded data/Raster/USGS_1_n41w114_20241031.tif
+   Loaded data/Raster/USGS_1_n41w115_20250115.tif
+   Loaded data/Raster/USGS_1_n42w111_20240130.tif
+   Loaded data/Raster/USGS_1_n42w112_20240130.tif
+   Loaded data/Raster/USGS_1_n42w113_20241031.tif
+   Loaded data/Raster/USGS_1_n42w114_20241031.tif
+   Loaded data/Raster/USGS_1_n42w115_20250115.tif
++------+-------+---------+
+|x     |y      |elevation|
++------+-------+---------+
+|137256|-393708|-20      |
+|137257|-393708|-21      |
+|137258|-393708|-21      |
+|137259|-393708|-21      |
+|137260|-393708|-20      |
++------+-------+---------+
+only showing top 5 rows
+
+Total number of pixels: 430535952
+Loading vector data…
++-----+----------+--------------------+
+|state|    county|              points|
++-----+----------+--------------------+
+| Utah|    Carbon|[{-110.6037790002...|
+| Utah|Washington|[{-113.4098160000...|
+| Utah|      Rich|[{-111.5120419998...|
+| Utah|     Grand|[{-109.1066760004...|
+| Utah|    Tooele|[{-112.4575520004...|
+| Utah|     Cache|[{-112.1660079998...|
+| Utah|  Duchesne|[{-110.9029189997...|
+| Utah|      Juab|[{-112.6295390002...|
+| Utah|     Davis|[{-112.0081340001...|
+| Utah|   Daggett|[{-110.0007170001...|
+| Utah| Box Elder|[{-112.1331809999...|
+| Utah|   Millard|[{-112.1372929999...|
+| Utah|    Morgan|[{-111.8765980003...|
+| Utah|     Weber|[{-111.9757990001...|
+| Utah|      Kane|[{-112.9012879997...|
+| Utah| Salt Lake|[{-111.7375679995...|
+| Utah|    Sevier|[{-112.1339829999...|
+| Utah|  Garfield|[{-110.8540669998...|
+| Utah|     Piute|[{-112.5194990003...|
+| Utah|    Summit|[{-111.5937119997...|
+| Utah|     Emery|[{-111.3012560001...|
+| Utah|    Beaver|[{-114.0505150000...|
+| Utah|  San Juan|[{-110.0445710000...|
+| Utah|    Uintah|[{-109.0509519995...|
+| Utah|      Utah|[{-111.6762459995...|
+| Utah|     Wayne|[{-111.1719260003...|
+| Utah|   Wasatch|[{-111.5938789997...|
+| Utah|      Iron|[{-112.7848469999...|
+| Utah|   Sanpete|[{-111.7477359994...|
++-----+----------+--------------------+
+
+Total regions loaded: 29
++-----+----------+--------------------+
+|state|    county|              points|
++-----+----------+--------------------+
+| Utah|    Carbon|[{-110.6037790002...|
+| Utah|Washington|[{-113.4098160000...|
+| Utah|      Rich|[{-111.5120419998...|
+| Utah|     Grand|[{-109.1066760004...|
+| Utah|    Tooele|[{-112.4575520004...|
+| Utah|     Cache|[{-112.1660079998...|
+| Utah|  Duchesne|[{-110.9029189997...|
+| Utah|      Juab|[{-112.6295390002...|
+| Utah|     Davis|[{-112.0081340001...|
+| Utah|   Daggett|[{-110.0007170001...|
++-----+----------+--------------------+
+only showing top 10 rows
+
+Done Loading
+Clipping
+   Loaded data/Raster/USGS_1_n38w109_20220720.tif
+   Loaded data/Raster/USGS_1_n38w110_20241031.tif
+   Loaded data/Raster/USGS_1_n38w111_20241031.tif
+   Loaded data/Raster/USGS_1_n38w112_20240614.tif
+   Loaded data/Raster/USGS_1_n38w113_20240614.tif
+   Loaded data/Raster/USGS_1_n38w114_20240614.tif
+   Loaded data/Raster/USGS_1_n38w115_20250115.tif
+   Loaded data/Raster/USGS_1_n39w109_20211208.tif
+   Loaded data/Raster/USGS_1_n39w110_20241031.tif
+   Loaded data/Raster/USGS_1_n39w111_20241031.tif
+   Loaded data/Raster/USGS_1_n39w112_20240130.tif
+   Loaded data/Raster/USGS_1_n39w113_20220510.tif
+   Loaded data/Raster/USGS_1_n39w114_20241031.tif
+   Loaded data/Raster/USGS_1_n39w115_20250115.tif
+   Loaded data/Raster/USGS_1_n40w109_20180328.tif
+   Loaded data/Raster/USGS_1_n40w110_20241031.tif
+   Loaded data/Raster/USGS_1_n40w111_20241031.tif
+   Loaded data/Raster/USGS_1_n40w112_20240130.tif
+   Loaded data/Raster/USGS_1_n40w113_20241031.tif
+   Loaded data/Raster/USGS_1_n40w114_20241031.tif
+   Loaded data/Raster/USGS_1_n40w115_20250115.tif
+   Loaded data/Raster/USGS_1_n41w109_20220805.tif
+   Loaded data/Raster/USGS_1_n41w110_20241031.tif
+   Loaded data/Raster/USGS_1_n41w111_20241031.tif
+   Loaded data/Raster/USGS_1_n41w112_20241031.tif
+   Loaded data/Raster/USGS_1_n41w113_20241031.tif
+   Loaded data/Raster/USGS_1_n41w114_20241031.tif
+   Loaded data/Raster/USGS_1_n41w115_20250115.tif
+   Loaded data/Raster/USGS_1_n42w111_20240130.tif
+   Loaded data/Raster/USGS_1_n42w112_20240130.tif
+   Loaded data/Raster/USGS_1_n42w113_20241031.tif
+   Loaded data/Raster/USGS_1_n42w114_20241031.tif
+   Loaded data/Raster/USGS_1_n42w115_20250115.tif
++---+---+---------+-----------------+----+
+|x  |y  |elevation|lon              |lat |
++---+---+---------+-----------------+----+
+|0  |0  |-20      |-109.0           |39.0|
+|1  |0  |-21      |-109.000277777778|39.0|
+|2  |0  |-21      |-109.000555555556|39.0|
+|3  |0  |-21      |-109.000833333334|39.0|
+|4  |0  |-20      |-109.001111111112|39.0|
++---+---+---------+-----------------+----+
+only showing top 5 rows
+
+Start of Clipping Compute
+Starting Clipping for Carbon, Utah
+Region bounding box: [(-111.24750600026209, 39.46745500019682) -> (-109.87391300031084, 39.81413799965867)]
+Finished Clipping for Carbon: Average Elevation = 2014.94
+Starting Clipping for Washington, Utah
+Region bounding box: [(-114.05288500007424, 36.99997499986017) -> (-112.89906599978184, 37.61828899994208)]
+No valid pixels found for Washington
+Starting Clipping for Rich, Utah
+Region bounding box: [(-111.51204199985148, 41.14102999968242) -> (-111.0457889995335, 42.001702000429816)]
+Finished Clipping for Rich: Average Elevation = 2210.21
+Starting Clipping for Grand, Utah
+Region bounding box: [(-110.17929599983682, 38.4999269996153) -> (-109.0507009995053, 39.49987500014652)]
+Finished Clipping for Grand: Average Elevation = 1903.38
+Starting Clipping for Tooele, Utah
+Region bounding box: [(-114.04702600008335, 39.903654999519745) -> (-112.14438299991161, 41.076887999782)]
+Finished Clipping for Tooele: Average Elevation = 1983.76
+Starting Clipping for Cache, Utah
+Region bounding box: [(-112.16610799987791, 41.36881800037054) -> (-111.40153500002299, 41.99955200043314)]
+Finished Clipping for Cache: Average Elevation = 1915.40
+Starting Clipping for Duchesne, Utah
+Region bounding box: [(-110.90501699975204, 39.80622999967096) -> (-109.97640200015172, 40.83482400015771)]
+Finished Clipping for Duchesne: Average Elevation = 2025.01
+Starting Clipping for Juab, Utah
+Region bounding box: [(-114.04785500008205, 39.31448300043428) -> (-111.58475399973861, 40.01165600039377)]
+Finished Clipping for Juab: Average Elevation = 1998.14
+Starting Clipping for Davis, Utah
+Region bounding box: [(-112.49351500041138, 40.76909300025977) -> (-111.7389119994993, 41.15302799966378)]
+Finished Clipping for Davis: Average Elevation = 1601.40
+Starting Clipping for Daggett, Utah
+Region bounding box: [(-110.00071700011398, 40.66238500042539) -> (-109.04843199950881, 41.00210699989805)]
+Finished Clipping for Daggett: Average Elevation = 2256.31
+Starting Clipping for Box Elder, Utah
+Region bounding box: [(-114.04202900009108, 40.99989599990147) -> (-111.8731710003326, 42.00151500043012)]
+Finished Clipping for Box Elder: Average Elevation = 1826.74
+Starting Clipping for Millard, Utah
+Region bounding box: [(-114.04997700007874, 38.571357999504414) -> (-112.01396500011407, 39.554046000062385)]
+Finished Clipping for Millard: Average Elevation = 2030.12
+Starting Clipping for Morgan, Utah
+Region bounding box: [(-111.87659800032725, 40.78003800024277) -> (-111.22143000030258, 41.37395800036256)]
+Finished Clipping for Morgan: Average Elevation = 2632.82
+Starting Clipping for Weber, Utah
+Region bounding box: [(-112.49351500041138, 41.076887999782) -> (-111.42038099999371, 41.43387500026955)]
+Finished Clipping for Weber: Average Elevation = 2048.44
+Starting Clipping for Kane, Utah
+Region bounding box: [(-112.90128799977839, 37.000384999859534) -> (-110.63927000016452, 37.543693000057885)]
+No valid pixels found for Kane
+Starting Clipping for Salt Lake, Utah
+Region bounding box: [(-112.26021599973183, 40.414168999769004) -> (-111.55318799978761, 40.921848000022635)]
+Finished Clipping for Salt Lake: Average Elevation = 2250.91
+Starting Clipping for Sevier, Utah
+Region bounding box: [(-112.52262700036619, 38.50179099961241) -> (-111.29815400018344, 39.04558799980998)]
+Finished Clipping for Sevier: Average Elevation = 2084.29
+Starting Clipping for Garfield, Utah
+Region bounding box: [(-112.68929700010744, 37.53573300007025) -> (-109.92723600022805, 38.15384000015246)]
+Finished Clipping for Garfield: Average Elevation = 2274.21
+Starting Clipping for Piute, Utah
+Region bounding box: [(-112.51952200037101, 38.145615000165265) -> (-111.76639300049834, 38.51225399959617)]
+Finished Clipping for Piute: Average Elevation = 1944.92
+Starting Clipping for Summit, Utah
+Region bounding box: [(-111.64912899963866, 40.54833199956073) -> (-110.00069700011403, 41.251626999510734)]
+Finished Clipping for Summit: Average Elevation = 1913.29
+Starting Clipping for Emery, Utah
+Region bounding box: [(-111.30703700016966, 38.49992099961531) -> (-109.98775400013415, 39.70437299982905)]
+Finished Clipping for Emery: Average Elevation = 2014.30
+Starting Clipping for Beaver, Utah
+Region bounding box: [(-114.05052100007788, 38.147325000162596) -> (-112.33538099961515, 38.57415799950007)]
+Finished Clipping for Beaver: Average Elevation = 2214.93
+Starting Clipping for San Juan, Utah
+Region bounding box: [(-111.41301400000515, 36.99765699986375) -> (-109.04157199951948, 38.5000279996151)]
+Finished Clipping for San Juan: Average Elevation = 1847.37
+Starting Clipping for Uintah, Utah
+Region bounding box: [(-110.04823000004023, 39.46176600020567) -> (-109.04776699950986, 40.85841200012112)]
+Finished Clipping for Uintah: Average Elevation = 2063.48
+Starting Clipping for Utah, Utah
+Region bounding box: [(-112.21417799980327, 39.7762459997175) -> (-110.85764699982553, 40.577913999514806)]
+Finished Clipping for Utah: Average Elevation = 1569.20
+Starting Clipping for Wayne, Utah
+Region bounding box: [(-111.84884000037033, 38.1499600001585) -> (-109.88510500029344, 38.51023099959929)]
+Finished Clipping for Wayne: Average Elevation = 1899.35
+Starting Clipping for Wasatch, Utah
+Region bounding box: [(-111.6209519996824, 39.89965299952598) -> (-110.89165499977275, 40.69094900038107)]
+Finished Clipping for Wasatch: Average Elevation = 2345.39
+Starting Clipping for Iron, Utah
+Region bounding box: [(-114.05235000007508, 37.47429800016562) -> (-112.46702100045246, 38.14877700016035)]
+Finished Clipping for Iron: Average Elevation = 2206.97
+Starting Clipping for Sanpete, Utah
+Region bounding box: [(-112.01624000011049, 39.032254999830684) -> (-111.24707800026272, 39.813165999660214)]
+Finished Clipping for Sanpete: Average Elevation = 2137.77
+Finished Clipping Compute
++-----+----------+------------------+
+|state|    county|  averageElevation|
++-----+----------+------------------+
+| Utah|    Carbon|2014.9446808510634|
+| Utah|Washington|               0.0|
+| Utah|      Rich| 2210.211111111111|
+| Utah|     Grand|1903.3846938775505|
+| Utah|    Tooele|1983.7591439688713|
+| Utah|     Cache|1915.3999999999999|
+| Utah|  Duchesne| 2025.014545454545|
+| Utah|      Juab|1998.1401459854012|
+| Utah|     Davis|1601.4000000000003|
+| Utah|   Daggett|2256.3142857142866|
+| Utah| Box Elder|1826.7411764705862|
+| Utah|   Millard|2030.1207468879672|
+| Utah|    Morgan|2632.8217391304356|
+| Utah|     Weber| 2048.436842105263|
+| Utah|      Kane|               0.0|
+| Utah| Salt Lake|2250.9148148148147|
+| Utah|    Sevier| 2084.287142857143|
+| Utah|  Garfield|2274.2104166666663|
+| Utah|     Piute|1944.9160000000002|
+| Utah|    Summit|1913.2910447761194|
+| Utah|     Emery|2014.2993197278909|
+| Utah|    Beaver| 2214.934831460675|
+| Utah|  San Juan|1847.3666666666672|
+| Utah|    Uintah| 2063.475789473685|
+| Utah|      Utah|1569.2016949152546|
+| Utah|     Wayne|1899.3471910112362|
+| Utah|   Wasatch| 2345.387755102041|
+| Utah|      Iron| 2206.971428571428|
+| Utah|   Sanpete| 2137.773770491804|
++-----+----------+------------------+
+
+Clipping Done | Took 2.309284988926E8
+Aggregating QuadTree
+Building QuadTree...
+QuadTree Built.
++-----+---------+-------------------+
+|state|   county|   averageElevation|
++-----+---------+-------------------+
+| Utah|     Rich|  3.731937415246701|
+| Utah|    Emery| 0.8842124742931264|
+| Utah|  Sanpete| 1.0571215215208891|
+| Utah|  Daggett|-2.5084075642111205|
+| Utah|   Tooele| 3.6070071239117816|
+| Utah|   Beaver| -0.625177023049645|
+| Utah| San Juan| -2.463263459080359|
+| Utah|   Carbon|-3.1321850225590935|
+| Utah|   Sevier|0.07590167000987041|
+| Utah|    Weber| 20.820667966459016|
+| Utah| Garfield| -4.526983561101209|
+| Utah|   Uintah|-1.0094833777960188|
+| Utah|    Grand|-1.3404534001905792|
+| Utah|   Morgan|  9.744720643929528|
+| Utah|Salt Lake| -4.172060281716245|
+| Utah|     Juab| -3.779408700027415|
+| Utah|    Cache|  2.060115804044701|
+| Utah|Box Elder|   8.35444877409936|
+| Utah|    Wayne| 1.5299965610202744|
+| Utah|   Summit|  1.743844530777864|
+| Utah| Duchesne| -3.158080620032648|
+| Utah|    Piute|-1.7465728294382608|
+| Utah|    Davis| 0.2128253407440836|
+| Utah|     Iron|-4.1871425563712545|
+| Utah|     Utah|-0.1665993847898071|
+| Utah|  Millard|-3.3448094406921864|
+| Utah|  Wasatch| -2.644387124548908|
++-----+---------+-------------------+
+
+QuadTree Done | Took 123.84013789
+Point in Polygon
+   Starting PointInPoly: Carbon, Utah | Num: 4296
+   Finished PointInPoly: Carbon, Utah: 20.0
+   Starting PointInPoly: Washington, Utah | Num: 1781
+   Finished PointInPoly: Washington, Utah: 0.0
+   Starting PointInPoly: Rich, Utah | Num: 6740
+   Finished PointInPoly: Rich, Utah: 0.0
+   Starting PointInPoly: Grand, Utah | Num: 5625
+   Finished PointInPoly: Grand, Utah: 0.0
+   Starting PointInPoly: Tooele, Utah | Num: 5557
+   Finished PointInPoly: Tooele, Utah: 0.0
+   Starting PointInPoly: Cache, Utah | Num: 8625
+   Finished PointInPoly: Cache, Utah: 125.0
+   Starting PointInPoly: Duchesne, Utah | Num: 4465
+   Finished PointInPoly: Duchesne, Utah: 0.0
+   Starting PointInPoly: Juab, Utah | Num: 6162
+   Finished PointInPoly: Juab, Utah: -80.0
+   Starting PointInPoly: Davis, Utah | Num: 3178
+   Finished PointInPoly: Davis, Utah: 0.0
+   Starting PointInPoly: Daggett, Utah | Num: 2695
+   Finished PointInPoly: Daggett, Utah: 0.0
+   Starting PointInPoly: Box Elder, Utah | Num: 4378
+   Finished PointInPoly: Box Elder, Utah: 8.5
+   Starting PointInPoly: Millard, Utah | Num: 1394
+   Finished PointInPoly: Millard, Utah: -106.0
+   Starting PointInPoly: Morgan, Utah | Num: 8066
+   Finished PointInPoly: Morgan, Utah: 0.0
+   Starting PointInPoly: Weber, Utah | Num: 6318
+   Finished PointInPoly: Weber, Utah: 0.0
+   Starting PointInPoly: Kane, Utah | Num: 4643
+   Finished PointInPoly: Kane, Utah: 0.0
+   Starting PointInPoly: Salt Lake, Utah | Num: 6546
+   Finished PointInPoly: Salt Lake, Utah: 0.0
+   Starting PointInPoly: Sevier, Utah | Num: 1544
+   Finished PointInPoly: Sevier, Utah: 41.5
+   Starting PointInPoly: Garfield, Utah | Num: 5243
+   Finished PointInPoly: Garfield, Utah: 0.0
+   Starting PointInPoly: Piute, Utah | Num: 2973
+   Finished PointInPoly: Piute, Utah: 125.0
+   Starting PointInPoly: Summit, Utah | Num: 12397
+   Finished PointInPoly: Summit, Utah: 0.0
+   Starting PointInPoly: Emery, Utah | Num: 6969
+   Finished PointInPoly: Emery, Utah: -25.0
+   Starting PointInPoly: Beaver, Utah | Num: 3248
+ Beaver, Utah | Num: 3248
+   Finished PointInPoly: Beaver, Utah: 0.0
+   Starting PointInPoly: San Juan, Utah | Num: 9622
+   Finished PointInPoly: San Juan, Utah: -108.0
+   Starting PointInPoly: Uintah, Utah | Num: 5558
+   Finished PointInPoly: Uintah, Utah: 68.5
+   Starting PointInPoly: Utah, Utah | Num: 15057
+   Finished PointInPoly: Utah, Utah: 0.0
+   Starting PointInPoly: Wayne, Utah | Num: 3479
+   Finished PointInPoly: Wayne, Utah: 16.0
+   Starting PointInPoly: Wasatch, Utah | Num: 8675
+   Finished PointInPoly: Wasatch, Utah: 103.0
+   Starting PointInPoly: Iron, Utah | Num: 2426
+   Finished PointInPoly: Iron, Utah: 0.0
+   Starting PointInPoly: Sanpete, Utah | Num: 1733
+   Finished PointInPoly: Sanpete, Utah: -5.0
++-----+----------+------------------+
+|state|    county|  averageElevation|
++-----+----------+------------------+
+| Utah|    Carbon|               0.0|
+| Utah|Washington|               0.0|
+| Utah|      Rich|               0.0|
+| Utah|     Grand|            -109.0|
+| Utah|    Tooele|             41.25|
+| Utah|     Cache|             -52.0|
+| Utah|  Duchesne|             -19.5|
+| Utah|      Juab|             -56.0|
+| Utah|     Davis|               0.0|
+| Utah|   Daggett|               0.0|
+| Utah| Box Elder|             8.125|
+| Utah|   Millard|             -23.0|
+| Utah|    Morgan|             -42.0|
+| Utah|     Weber|               0.0|
+| Utah|      Kane|               0.0|
+| Utah| Salt Lake|               0.0|
+| Utah|    Sevier|               0.0|
+| Utah|  Garfield|               0.0|
+| Utah|     Piute|               0.0|
+| Utah|    Summit|-6.666666666666667|
+| Utah|     Emery|             -90.5|
+| Utah|    Beaver|               0.0|
+| Utah|  San Juan|            -108.0|
+| Utah|    Uintah|              68.5|
+| Utah|      Utah|               0.0|
+| Utah|     Wayne|              16.0|
+| Utah|   Wasatch|             103.0|
+| Utah|      Iron|               0.0|
+| Utah|   Sanpete|              -5.0|
++-----+----------+------------------+
+
+Point in Polygon Done | Took 1.851948135512E10
+ ======================================  Finished Computation  ======================================
